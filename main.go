@@ -51,7 +51,15 @@ func leComando() int{
 
 func iniciarMonitoramento() {
   fmt.Println("Monitorando...")
-  site := "https://random-status-code.herokuapp.com"
+  sites := []string{"https://random-status-code.herokuapp.com/", "https://www.alura.com.br", "https://www.caelum.com.br" }
+  
+  //fmt.Println(sites)
+
+  for i, site := range sites {
+    fmt.Println("Estou passando na posição ", i, " do meu slice e essa posição tem o site:", site)
+  }
+
+  site := "https://random-status-code.herokuapp.com/"
   resp, _ := http.Get(site)
 
   if resp.StatusCode == 200 {
